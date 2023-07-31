@@ -1,0 +1,29 @@
+.main_visual {
+    position: relative;
+    background: url(../images/bg_main_visual.jpg);
+
+    .inner {
+
+        h2 {
+            position: relative;
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 80px;
+            color: $color-w;
+            z-index: 1000;
+        }
+    }
+
+    .main_slide {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 1210px;
+        width: 100%;
+        height: calc(100% - 120px);
+    }
+}
+
+.main_content {
+    background: #000;
+}
