@@ -1,0 +1,92 @@
+.main_research {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 90%;
+        background: #f7f9fb;
+        border-radius: 0 0 240px 0;
+        z-index: -1;
+
+    }
+
+    .research_wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0, -50%);
+        margin: 0 0 0 -710px;
+        display: grid;
+        grid-template-columns: 1fr 3.5fr;
+        width: 100%;
+
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            padding: 36px;
+
+            h2 {
+                font-size: 32px;
+                line-height: 40px;
+                margin: 0 0 20px 0;
+
+                span {
+                    display: block;
+                    font-weight: 800;
+                    color: $color-main;
+                }
+            }
+
+            .arrows {
+                margin: auto 0;
+                cursor: pointer;
+            }
+
+            a {
+                display: inline-block;
+            }
+        }
+
+        .content {
+            overflow: hidden;
+
+            .research_slide {
+                margin: 0 -24px;
+
+                figure {
+                    margin: 0 24px;
+
+                    .img_box {
+                        margin: 0 0 24px 0;
+                        border: 1px solid #e5e5e5;
+                    }
+
+                    .txt_box {
+                        h3 {
+                            font-size: 20px;
+                            font-weight: 600;
+                            padding: 0 0 16px 0;
+                            margin: 0 0 16px 0;
+                            border-bottom: 1px solid #e5e5e5;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        .date {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
