@@ -1,0 +1,60 @@
+.main_community {
+    background: url(../images/bg_main_community.jpg)no-repeat center bottom/contain;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-wrap: wrap;
+
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+
+            h2 {
+                color: $color-w;
+                font-size: 40px;
+                line-height: 48px;
+                margin: 0 0 24px 0;
+
+                span {
+                    font-weight: 800;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                color: rgba($color: $color-w, $alpha: 0.6);
+                line-height: 24px;
+            }
+
+            .control_box {
+                margin: 40px 0;
+            }
+        }
+
+        .right {
+            display: flex;
+            background: yellow;
+
+
+            .co_name {
+                // position: relative;
+                z-index: 998;
+                color: rgba($color: $color-w, $alpha: 0.6);
+                margin: auto -100px auto 0;
+                background: $color-main;
+            }
+
+            .com_slide {
+                max-width: 580px;
+                width: 100%;
+
+            }
+        }
+
+
+    }
+}

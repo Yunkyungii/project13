@@ -37,7 +37,7 @@
                     width: 180px;
                     line-height: 120px;
                     font-size: 18px;
-                    font-weight: 700;
+                    font-weight: 600;
                     color: $color-w;
 
                     &::before {
@@ -59,7 +59,7 @@
                         width: 0;
                         height: 1px;
                         background: $color-line;
-                        transition: width .3s;
+
                     }
                 }
 
@@ -97,6 +97,7 @@
 
                         &::after {
                             width: 70%;
+                            transition: width .3s;
                         }
                     }
 

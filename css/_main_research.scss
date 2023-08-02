@@ -29,12 +29,12 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            padding: 36px;
+            padding: 24px 0;
 
             h2 {
-                font-size: 32px;
-                line-height: 40px;
-                margin: 0 0 20px 0;
+                font-size: 40px;
+                line-height: 48px;
+                margin: 0 0 16px 0;
 
                 span {
                     display: block;
@@ -43,14 +43,59 @@
                 }
             }
 
-            .arrows {
-                margin: auto 0;
-                cursor: pointer;
+            p {
+                line-height: 26px;
+                // font-size: 18px;
             }
 
-            a {
-                display: inline-block;
+            .arrows {
+                margin: auto 0;
+                display: flex;
+                gap: 25px;
+                align-items: center;
+
+                .left {
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: relative;
+                        left: 12px;
+                        width: 1px;
+                        height: 16px;
+                        background: #ddd;
+                    }
+                }
+
+                span {
+                    cursor: pointer;
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #ddd;
+
+                    &:hover {
+                        color: $color-main;
+                        transition: .3s;
+                    }
+                }
             }
+
+            .btn {
+
+                a {
+                    display: inline-block;
+                    padding: 20px 32px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    background: $color-main;
+                    color: $color-w;
+
+                    i {
+                        padding-left: 16px;
+                    }
+
+                }
+            }
+
         }
 
         .content {
@@ -82,6 +127,15 @@
                         .date {
                             display: flex;
                             justify-content: space-between;
+                        }
+                    }
+
+                    &:hover {
+                        .txt_box {
+                            h3 {
+                                border-bottom: 1px solid $color-main;
+                                transition: 0.5s;
+                            }
                         }
                     }
                 }

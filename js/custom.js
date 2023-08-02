@@ -1,14 +1,22 @@
 $(function () {
 
     $('.main').fullpage({
+        anchors: ['main', 'sub01', 'sub02'],
+        navigation: true,
+        'afterLoad': function (anchorLink, index) {
+            if (index == 1) {
+                $('.header').removeClass('on');
+            }
+        },
         onLeave: function (idx, nidx, dir) {
 
             if (dir == 'down') {
                 $('.header').addClass('on')
             }
-            else {
-                $('.header').removeClass('on')
-            }
+
+            // else {
+            //     $('.header').addClass('on')
+            // }
         },
     });
 
@@ -71,5 +79,9 @@ $(function () {
         $('.research_slide').slick('slickNext');
     });
 
+    $('.com_slide').slick({
+        arrows: false,
+        fade: true,
+    });
 
 })
