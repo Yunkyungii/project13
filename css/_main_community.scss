@@ -31,26 +31,6 @@
                 line-height: 24px;
             }
 
-            .control_box {
-                margin: auto 0;
-                display: flex;
-                gap: 25px;
-                align-items: center;
-                color: $color-w;
-
-                .arrows {
-                    max-width: 100px;
-                    width: 100%;
-                    background: tan;
-
-                    i {
-                        display: inline-block;
-                        padding: 8px;
-                        cursor: pointer;
-                        background: #000;
-                    }
-                }
-            }
 
             .btn {
                 a {
