@@ -1,0 +1,14 @@
+@mixin btn () {
+    display: inline-block;
+    padding: 6px 6px 5px 6px;
+    background: $color-main;
+    border-radius: 50%;
+    margin: 0 0 0 8px;
+    color: $color-w;
+}
+
+@mixin res() {
+    @media(max-width:768px) {
+        @content;
+    }
+}

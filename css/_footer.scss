@@ -1,0 +1,70 @@
+.footer {
+    background: #222;
+    padding: 80px 0;
+    color: $color-ld;
+    font-size: 15px;
+
+    .inner {
+        .top {
+            padding: 0 0 30px 0;
+            border-bottom: 1px solid $color-ld;
+
+            figure {
+                max-width: 205px;
+                margin: 0 0 32px 0;
+            }
+
+            .address {
+                display: flex;
+                flex-direction: column;
+
+                .contact {
+                    display: flex;
+                    align-items: center;
+                    gap: 48px;
+
+                    span {
+                        color: $color-lg;
+                        margin: 0 8px 0 0;
+                    }
+
+                    .familysite {
+
+                        display: inline-block;
+                        padding: 16px 40px;
+                        background: $color-d;
+                        margin: 0 0 0 auto;
+                        font-weight: 700;
+
+                    }
+                }
+            }
+
+
+        }
+
+        .bottom {
+            padding: 30px 0 0 0;
+            display: flex;
+
+            .info {
+                color: $color-lg;
+                margin-left: 16px;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 1px;
+                    height: 10px;
+                    background: $color-ld;
+                    margin-right: 14px;
+                    vertical-align: middle;
+                }
+            }
+
+            .copy {
+                margin: 0 0 0 auto;
+            }
+        }
+    }
+}

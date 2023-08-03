@@ -8,11 +8,13 @@
         bottom: 100px;
         transform: translate(-50%, 0);
         width: 100%;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 1fr 160px 1.5fr;
+        // display: grid;
+        // grid-template-columns: 50% 50%;
+        // grid-template-rows: 1fr 160px 1.5fr;
         align-items: center;
         z-index: 998;
+        display: flex;
+        flex-direction: column;
 
         h2 {
             font-size: 64px;
@@ -74,13 +76,17 @@
 
                 a {
                     i {
-                        padding: 4px 6px;
-                        background: $color-main;
-                        border-radius: 50%;
-                        margin: 0 0 0 8px;
+                        @include btn();
+                        transition: 0.5s;
                     }
 
+                    &:hover {
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
+
             }
 
             .notice_itm {
@@ -179,6 +185,72 @@
             &.on {
                 background: $color-sub;
             }
+        }
+    }
+
+    @include res() {
+        .inner {
+            bottom: 100px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            h2 {
+                font-size: 32px;
+                line-height: 36px;
+                grid-row: inherit;
+                grid-column: inherit;
+            }
+
+            .article_area {
+                grid-row: inherit;
+                grid-column: inherit;
+
+                .article_slide {
+                    width: 100%;
+
+                    .box {
+                        h3 {
+                            font-size: 20px;
+                            line-height: 20px;
+                        }
+
+                        ul {
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+
+                    }
+                }
+            }
+
+            .notice_area {
+                grid-row: inherit;
+                grid-column: inherit;
+
+                .title {
+                    display: none;
+                }
+
+                .notice_itm {
+                    flex-direction: column;
+
+                    .notice_slide {
+                        flex: 0 0 80%;
+                    }
+                }
+            }
+        }
+
+        .main_slide {
+            position: absolute;
+            bottom: 150px;
+            right: 0;
+            max-width: 1210px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+
+
         }
     }
 }

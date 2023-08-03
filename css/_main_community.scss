@@ -2,24 +2,25 @@
     background: url(../images/bg_main_community.jpg)no-repeat center bottom/contain;
 
     .inner {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 2.5fr;
         align-items: end;
-        flex-wrap: wrap;
 
 
         .left {
             display: flex;
             flex-direction: column;
-            width: 30%;
+            height: 70%;
+            padding: 24px 0;
 
             h2 {
-                color: $color-w;
                 font-size: 40px;
                 line-height: 48px;
-                margin: 0 0 24px 0;
+                margin: 0 0 16px 0;
+                color: $color-w;
 
                 span {
+                    display: block;
                     font-weight: 800;
                 }
             }
@@ -31,21 +32,85 @@
             }
 
             .control_box {
-                margin: 40px 0;
+                margin: auto 0;
+                display: flex;
+                gap: 25px;
+                align-items: center;
+                color: $color-w;
+
+                .arrows {
+                    max-width: 100px;
+                    width: 100%;
+                    background: tan;
+
+                    i {
+                        display: inline-block;
+                        padding: 8px;
+                        cursor: pointer;
+                        background: #000;
+                    }
+                }
             }
+
+            .btn {
+                a {
+                    display: inline-block;
+                    padding: 20px 32px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    background: $color-w;
+                    color: $color-main;
+
+                    i {
+                        padding-left: 16px;
+                    }
+
+                }
+            }
+
         }
 
         .right {
             display: flex;
-            background: yellow;
+            justify-content: right;
+            align-items: baseline;
 
 
             .co_name {
-                // position: relative;
                 z-index: 998;
                 color: rgba($color: $color-w, $alpha: 0.6);
-                margin: auto -100px auto 0;
-                background: $color-main;
+                margin: auto -100px 100px 0;
+                width: 30%;
+
+                li:not(:last-child) {
+                    margin: 0 0 8px 0;
+                }
+
+                li {
+                    position: relative;
+                    padding: 24px;
+                    background: #002d5e;
+                    font-weight: 600;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 0;
+                        background: $color-sub;
+                    }
+
+                    &.on {
+                        background: $color-w;
+                        color: $color-main;
+
+                        &::before {
+                            width: 3px;
+                        }
+                    }
+                }
             }
 
             .com_slide {
@@ -56,5 +121,43 @@
         }
 
 
+    }
+
+    @include res() {
+        background: url(../images/bg_main_community.jpg)no-repeat center center/cover;
+
+        .inner {
+            grid-template-columns: 1fr;
+            align-items: center;
+
+            .left {
+                padding: 0 0;
+                height: auto;
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .right {
+                flex-direction: column;
+
+                .co_name {
+                    width: 100%;
+                    margin: 0 0 0 0;
+
+                    li:not(:last-child) {
+                        margin: 0 0 4px 0;
+                    }
+                }
+
+
+            }
+        }
     }
 }

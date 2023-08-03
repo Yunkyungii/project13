@@ -13,6 +13,17 @@
                 font-weight: 800;
             }
         }
+
+        a {
+
+            i {
+                font-size: 32px;
+                padding: 5px 8px;
+                color: $color-main;
+                border-radius: 50%;
+                border: 3px solid $color-lg;
+            }
+        }
     }
 
     .news_con {
@@ -24,9 +35,32 @@
                 display: flex;
                 align-items: center;
 
+                strong {
+                    width: 100px;
+                    height: 100px;
+                    background: url(../images/bg_date.png)no-repeat center center/contain;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: center;
+                    justify-content: center;
+                    color: $color-w;
+                    font-weight: 700;
+                    margin: 0 32px 0 0;
+
+                    .day {
+                        font-size: 32px;
+                    }
+
+                }
+
                 h3 {
-                    font-size: 20px;
-                    font-weight: 500;
+                    span {
+                        display: block;
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin: 0 0 16px 0;
+                    }
                 }
 
                 figure {
@@ -62,12 +96,84 @@
                     strong {
                         font-size: 17px;
                         font-weight: 500;
+
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            width: 4px;
+                            height: 4px;
+                            background: $color-ld;
+                            margin: 0 16px 0 0;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    span {
+                        &::before {
+                            content: "\F291";
+                            margin: 0 8px 0 0;
+                            vertical-align: middle;
+                        }
                     }
 
                     &:hover {
                         color: $color-line;
                         background: rgba($color: $color-line, $alpha: 0.1);
                         transition: 0.4s;
+                    }
+                }
+            }
+        }
+    }
+
+    @include res() {
+        .tit {
+            align-items: center;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            a {
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .news_con {
+            .m_news {
+                a {
+                    padding: 20px;
+
+                    h3 {
+                        font-size: 14px;
+
+                        span {
+                            font-size: 18px;
+                            margin: 0 0 8px 0;
+                        }
+                    }
+
+                    figure {
+                        display: none;
+                    }
+                }
+
+
+            }
+
+            .news {
+                li {
+                    a {
+                        padding: 24px 20px;
+                        flex-direction: column;
+
+                        strong {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
                     }
                 }
             }

@@ -3,6 +3,8 @@ $(function () {
     $('.main').fullpage({
         anchors: ['main', 'sub01', 'sub02'],
         navigation: true,
+        css3: false,
+        responsiveWidth: 700,
         'afterLoad': function (anchorLink, index) {
             if (index == 1) {
                 $('.header').removeClass('on');
@@ -70,6 +72,14 @@ $(function () {
         arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.main_research .arrows .left').on('click', function () {
@@ -82,6 +92,27 @@ $(function () {
     $('.com_slide').slick({
         arrows: false,
         fade: true,
+    });
+
+    $('.co_name li').on('click', function (e) {
+        e.preventDefault();
+        let idx = $(this).index();
+        $('.com_slide').slick('slickGoTo', idx);
+        $(this).addClass('on').siblings().removeClass('on');
+    });
+
+    $('.com_slide').on('init afterChange', function (e, s, c) {
+        const current = $('.com_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+        $('.co_name li').eq(0).addClass('on');
+        $('.co_name li').eq(c).addClass('on')
+            .siblings().removeClass('on');
+    });
+    $('.main_community .arrows .left').on('click', function () {
+        $('.com_slide').slick('slickPrev');
+    });
+    $('.main_community .arrows .right').on('click', function () {
+        $('.com_slide').slick('slickNext');
     });
 
 })

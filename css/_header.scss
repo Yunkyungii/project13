@@ -230,4 +230,17 @@
 
 
     }
+
+    @include res() {
+        overflow: hidden;
+
+        .header_wrap {
+            flex-direction: column;
+
+            .gnb {
+                display: none;
+            }
+        }
+
+    }
 }

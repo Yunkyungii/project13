@@ -113,6 +113,7 @@
                     }
 
                     .txt_box {
+
                         h3 {
                             font-size: 20px;
                             font-weight: 600;
@@ -127,6 +128,27 @@
                         .date {
                             display: flex;
                             justify-content: space-between;
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: $color-ld;
+                            align-items: center;
+
+                            span {
+                                &::before {
+                                    content: "\F291";
+                                    margin: 0 8px 0 0;
+                                    vertical-align: middle;
+                                }
+                            }
+
+                            a {
+
+                                i {
+                                    @include btn();
+                                    transition: 0.5s;
+                                }
+
+                            }
                         }
                     }
 
@@ -136,11 +158,78 @@
                                 border-bottom: 1px solid $color-main;
                                 transition: 0.5s;
                             }
+
+                            .date {
+                                a {
+                                    i {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
 
+    }
+
+    @include res() {
+        .research_wrap {
+
+            transform: translate(-50%, -50%);
+            margin: 0 0 0 0;
+            padding: 0 20px;
+            grid-template-columns: 1fr;
+
+            .title {
+                align-items: center;
+                text-align: center;
+
+                h2 {
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin: 0 0 8px 0;
+
+                    span {
+                        display: inline;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                .arrows {
+                    margin: 24px 0 0 0;
+                }
+
+                .btn {
+                    position: absolute;
+                    bottom: -150px;
+                }
+            }
+
+            .content {
+                .research_slide {
+                    margin: 0 0;
+
+                    figure {
+                        margin: 0 0;
+
+                        .txt_box {
+                            h3 {
+                                font-size: 16px;
+                            }
+
+                            .date {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
