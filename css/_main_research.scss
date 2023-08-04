@@ -132,10 +132,12 @@
                             font-weight: 600;
                             color: $color-ld;
                             align-items: center;
+                            padding: 1px;
 
                             span {
                                 &::before {
-                                    content: "\F291";
+                                    content: "\F293";
+                                    font-family: bootstrap-icons;
                                     margin: 0 8px 0 0;
                                     vertical-align: middle;
                                 }

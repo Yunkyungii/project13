@@ -232,15 +232,147 @@
     }
 
     @include res() {
-        overflow: hidden;
-
         .header_wrap {
+            height: 100px;
             flex-direction: column;
+            justify-content: center;
+            align-items: start;
+
+            // background: #fff;
+            h1 {
+                flex: 0 0 0;
+                width: 205px;
+            }
 
             .gnb {
-                display: none;
+                position: fixed;
+                padding: 100px 20px 0 20px;
+                top: 0;
+                left: -100%;
+                width: calc(100% - 64px);
+                height: 100vh;
+                background: #fff;
+                border-right: 1px solid #ddd;
+
+                >ul {
+                    flex-direction: column;
+
+                    >li {
+                        border-bottom: 1px solid $color-lg;
+
+                        >a {
+                            line-height: 18px;
+                            font-size: 18px;
+                            padding: 24px 0;
+                            color: $color-d;
+                            text-align: left;
+
+                            &::before {
+                                display: none;
+                            }
+
+                            &::after {
+                                display: none;
+                            }
+
+                            &.on {
+                                color: $color-sub;
+                            }
+                        }
+
+                        .sub {
+                            position: static;
+                            display: none;
+                            padding: 10px 0 10px 20px;
+                            text-align: left;
+                            background: $color-lg;
+
+                            li {
+                                a {
+                                    color: $color-ld;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            a {
+                                background: transparent;
+                            }
+
+                            .sub {
+                                display: none;
+                            }
+                        }
+
+
+                    }
+                }
+
+                &.on {
+                    left: 0;
+                    transition: .3s;
+                }
+            }
+
+            .customer {
+                .global {
+                    display: none;
+                }
+
+                .menu_ico {
+                    position: fixed;
+                    top: 38px;
+                    right: 20px;
+                    color: $color-w;
+                    z-index: 1000;
+
+                }
             }
         }
 
+        &.on {
+            .header_wrap {
+                .gnb>ul {
+                    >li {
+                        >a {
+                            line-height: 18px;
+                        }
+
+                        &:hover {
+                            >a {
+                                color: $color-d;
+                            }
+                        }
+                    }
+                }
+
+                .customer {
+                    .menu_ico {
+                        color: $color-d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#fp-nav {
+    ul {
+        li {
+            a {
+                span {
+                    background: $color-w;
+                    box-shadow: 0 0 3px #000;
+                }
+            }
+
+
+            .active {
+                span {
+                    background: $color-sub;
+                    box-shadow: 0 0 0 #000;
+                }
+            }
+        }
     }
 }

@@ -110,7 +110,8 @@
 
                     span {
                         &::before {
-                            content: "\F291";
+                            content: "\F293";
+                            font-family: bootstrap-icons;
                             margin: 0 8px 0 0;
                             vertical-align: middle;
                         }
@@ -144,14 +145,29 @@
         .news_con {
             .m_news {
                 a {
-                    padding: 20px;
+                    padding: 10px;
+
+                    strong {
+                        font-size: 12px;
+                        margin: 0 16px 0 0;
+
+                        .day {
+                            font-size: 18px;
+                        }
+                    }
 
                     h3 {
                         font-size: 14px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
 
                         span {
                             font-size: 18px;
                             margin: 0 0 8px 0;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                         }
                     }
 
@@ -166,12 +182,25 @@
             .news {
                 li {
                     a {
-                        padding: 24px 20px;
+                        padding: 24px 10px;
                         flex-direction: column;
 
                         strong {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                             font-size: 16px;
                             font-weight: 600;
+                            margin: 0 0 8px 0;
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                        span {
+                            font-size: 14px;
+                            color: #999;
                         }
 
                     }

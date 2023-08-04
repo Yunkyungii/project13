@@ -1,13 +1,14 @@
 .main_community {
     background: url(../images/bg_main_community.jpg)no-repeat center bottom/contain;
+    position: relative;
 
     .inner {
-        display: grid;
-        grid-template-columns: 1fr 2.5fr;
+        display: flex;
         align-items: end;
 
 
         .left {
+            flex: 0 0 30%;
             display: flex;
             flex-direction: column;
             height: 70%;
@@ -26,9 +27,11 @@
             }
 
             p {
-                font-size: 20px;
+                display: block;
+                font-size: 18px;
                 color: rgba($color: $color-w, $alpha: 0.6);
                 line-height: 24px;
+                margin: 0 0 86px 0;
             }
 
 
@@ -51,10 +54,10 @@
         }
 
         .right {
+            flex: 0 0 70%;
             display: flex;
             justify-content: right;
             align-items: baseline;
-
 
             .co_name {
                 z-index: 998;
@@ -93,9 +96,17 @@
                 }
             }
 
-            .com_slide {
+            .content {
+                position: relative;
                 max-width: 580px;
+                min-width: 338px;
                 width: 100%;
+
+                .com_slide {
+                    .slick-slide:not(.slick-active) {
+                        transition-delay: 500ms !important;
+                    }
+                }
 
             }
         }
@@ -105,14 +116,18 @@
 
     @include res() {
         background: url(../images/bg_main_community.jpg)no-repeat center center/cover;
+        padding: 80px 0;
 
         .inner {
-            grid-template-columns: 1fr;
+            position: relative;
+            flex-direction: column;
             align-items: center;
+            padding: 0 20px 94px 20px;
 
             .left {
                 padding: 0 0;
-                height: auto;
+                height: 100%;
+                margin: 0 0 16px 0;
 
                 h2 {
                     font-size: 24px;
@@ -121,20 +136,35 @@
                 p {
                     font-size: 16px;
                     line-height: 20px;
+                    margin: 0 0 32px 0;
+                }
+
+                a {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+
                 }
             }
 
             .right {
+
+                width: 100%;
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
                 .co_name {
                     width: 100%;
-                    margin: 0 0 0 0;
+                    margin: 0 0 16px 0;
 
                     li:not(:last-child) {
                         margin: 0 0 4px 0;
                     }
                 }
+
+                .content {}
 
 
             }

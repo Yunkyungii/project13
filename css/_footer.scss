@@ -71,4 +71,41 @@
             }
         }
     }
+
+    @include res() {
+        font-size: 14px;
+
+        .footer_wrap {
+            .top {
+                .address {
+                    gap: 16px;
+
+                    .contact {
+                        flex-direction: column;
+                        align-items: inherit;
+                        gap: 16px;
+
+                        .familysite {
+                            margin: 16px auto 0 0;
+                        }
+                    }
+                }
+
+            }
+
+            .bottom {
+                flex-direction: column;
+                gap: 6px;
+                line-height: 16px;
+
+                .info {
+                    margin-left: 0;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }

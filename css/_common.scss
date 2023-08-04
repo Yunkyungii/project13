@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid tomato;
+    // outline: 1px solid tomato;
 }
 
 *::before,
@@ -67,7 +67,7 @@ textarea {
 
 
 .inner {
-    /* width: 100%; */
+    width: 100%;
     max-width: 1460px;
     padding: 0 20px;
     margin: 0 auto;
