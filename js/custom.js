@@ -103,6 +103,7 @@ $(function () {
 
     $('.com_slide').on('init afterChange', function (e, s, c) {
         const current = $('.com_slide .slick-current');
+        e.preventDefault();
         current.addClass('on').siblings().removeClass('on');
         $('.co_name li').eq(0).addClass('on');
         $('.co_name li').eq(c).addClass('on')

@@ -27,7 +27,6 @@
     }
 
     .news_con {
-
         .m_news {
             a {
                 padding: 24px;
@@ -109,6 +108,8 @@
                     }
 
                     span {
+                        color: #999;
+
                         &::before {
                             content: "\F293";
                             font-family: bootstrap-icons;

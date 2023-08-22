@@ -59,6 +59,7 @@
             .notice_area {
                 flex: 0 0 50%;
                 overflow: hidden;
+                margin: 0 0 50px 0;
 
                 .title {
                     display: flex;
@@ -95,6 +96,7 @@
                     text-align: center;
                     align-items: center;
                     padding: 10px;
+
 
                     .notice_slide {
                         width: 80%;

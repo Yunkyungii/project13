@@ -1,0 +1,165 @@
+.main_about {
+    background: url(../images/bg_main_about.jpg)center center/cover;
+
+    .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .title {
+            color: $color-w;
+            padding: 0 200px 0 0;
+
+            strong {
+                display: block;
+                font-size: 20px;
+                font-weight: 700;
+                color: rgba($color: $color-w, $alpha: 0.3);
+                margin: 0 0 16px 0;
+            }
+
+            h2 {
+                font-size: 48px;
+                line-height: 64px;
+                font-weight: 900;
+                margin: 0 0 24px 0;
+                padding: 24px 0;
+                border: 1px solid rgba($color: $color-w, $alpha: 0.2);
+                border-width: 1px 0 1px 0;
+
+                span {
+                    display: block;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 28px;
+                color: rgba($color: $color-w, $alpha: 0.7);
+                // font-size: 18px;
+            }
+        }
+
+        .about_con {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            padding: 0 0 0 30px;
+
+            >li {
+                position: relative;
+                background: rgba($color: $color-w, $alpha: 0.1);
+                padding: 24px 32px 24px 24px;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 500;
+                color: $color-w;
+                cursor: pointer;
+
+                a {
+                    &::after {
+                        content: "\F4FE";
+                        font-family: bootstrap-icons;
+                        position: absolute;
+                        bottom: 24px;
+                        right: 24px;
+                        padding: 0 4px;
+                        background: rgba($color: $color-w, $alpha: 0.5);
+                        color: $color-main;
+                        border-radius: 50%;
+                        font-size: 18px;
+                        vertical-align: middle;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 0;
+                    width: 100%;
+                    background: $color-sub;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0 0 0 0;
+                    background: url(../images/bg_watermark.png) no-repeat left bottom /contain;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    background: $color-w;
+                    color: $color-main;
+                    transition: .4s;
+
+                    a {
+                        &::after {
+                            background: $color-main;
+                            color: $color-w;
+                        }
+                    }
+
+                    &::before {
+                        height: 2px;
+                    }
+
+                    &::after {
+                        opacity: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @include res() {
+        padding: 80px 0;
+
+        .inner {
+            grid-template-columns: 1fr;
+            gap: 40px;
+
+            .title {
+                padding: 0 0 0 0;
+                text-align: center;
+
+                strong {
+                    font-size: 16px;
+                    margin: 0 0 16px 0;
+                }
+
+                h2 {
+                    font-size: 32px;
+                    line-height: 40px;
+                    padding: 24px 0;
+                    margin: 0 0 24px 0;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .about_con {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                padding: 0 0 0 0;
+
+                >li {
+                    font-size: 16px;
+                    line-height: 20px;
+                    padding: 24px 32px 48px 24px;
+
+                    a {
+                        &::after {
+                            padding: 0 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
